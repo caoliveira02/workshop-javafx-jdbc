@@ -6,8 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
    <content>
       <VBox prefHeight="344.0" prefWidth="528.0">
          <children>
@@ -15,33 +14,33 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Cadastros">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Usuários" />
-                        <MenuItem mnemonicParsing="false" text="Sistemas" />
-                        <MenuItem mnemonicParsing="false" text="Chamados" />
+                    <MenuItem fx:id="menuItemCadastroUsuarios" mnemonicParsing="false" onAction="#onMenuItemCadastroUsuariosAction" text="Usuários" />
+                        <MenuItem fx:id="menuItemCadastroSistemas" mnemonicParsing="false" onAction="#onMenuItemCadastroSistemasAction" text="Sistemas" />
+                        <MenuItem fx:id="menuItemCadastroChamados" mnemonicParsing="false" onAction="#onMenuItemCadastroChamadosAction" text="Chamados" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Consultas">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Usuários" />
-                        <MenuItem mnemonicParsing="false" text="Sistemas" />
-                        <MenuItem mnemonicParsing="false" text="Chamados" />
+                      <MenuItem fx:id="menuItemConsutaUsuarios" mnemonicParsing="false" onAction="#onMenuItemConsultaUsuariosAction" text="Usuários" />
+                        <MenuItem fx:id="menuItemConsultaSistemas" mnemonicParsing="false" onAction="#onMenuItemConsultaSistemasAction" text="Sistemas" />
+                        <MenuItem fx:id="menuItemConsultaChamados" mnemonicParsing="false" onAction="#onMenuItemConsultaChamadosAction" text="Chamados" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Relatórios">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Usuários" />
-                        <MenuItem mnemonicParsing="false" text="Sistemas" />
-                        <MenuItem mnemonicParsing="false" text="Chamados" />
+                      <MenuItem fx:id="menuItemRelatorioUsuarios" mnemonicParsing="false" onAction="#onMenuItemRelatorioUsuariosAction" text="Usuários" />
+                        <MenuItem fx:id="menuItemRelatorioSistemas" mnemonicParsing="false" onAction="#onMenuItemRelatorioSistemasAction" text="Sistemas" />
+                        <MenuItem fx:id="menuItemRelatorioChamados" mnemonicParsing="false" onAction="#onMenuItemRelatorioChamadosAction" text="Chamados" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="About" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Sair">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem fx:id="menuItemSair" mnemonicParsing="false" onAction="#onMenuItemSairAction" text="Sair" />
                     </items>
                   </Menu>
               </menus>
