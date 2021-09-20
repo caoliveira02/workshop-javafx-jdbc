@@ -13,36 +13,29 @@
             <MenuBar>
               <menus>
                 <Menu mnemonicParsing="false" text="Cadastros">
-                  <items>
-                    <MenuItem fx:id="menuItemCadastroUsuarios" mnemonicParsing="false" onAction="#onMenuItemCadastroUsuariosAction" text="Usuários" />
-                        <MenuItem fx:id="menuItemCadastroSistemas" mnemonicParsing="false" onAction="#onMenuItemCadastroSistemasAction" text="Sistemas" />
+                     <items>
+                        <MenuItem fx:id="menuItemCadastroUsuarios" mnemonicParsing="false" onAction="#onMenuItemCadastroUsuariosAction" text="Usuário" />
                         <MenuItem fx:id="menuItemCadastroChamados" mnemonicParsing="false" onAction="#onMenuItemCadastroChamadosAction" text="Chamados" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Consultas">
-                    <items>
-                      <MenuItem fx:id="menuItemConsutaUsuarios" mnemonicParsing="false" onAction="#onMenuItemConsultaUsuariosAction" text="Usuários" />
-                        <MenuItem fx:id="menuItemConsultaSistemas" mnemonicParsing="false" onAction="#onMenuItemConsultaSistemasAction" text="Sistemas" />
+                        <MenuItem fx:id="menuItemCadastroSistemas" mnemonicParsing="false" onAction="#onMenuItemCadastroSistemasAction" text="Sistemas" />
+                     </items></Menu>
+                <Menu mnemonicParsing="false" text="Consultas">
+                     <items>
+                        <MenuItem fx:id="menuItemConsutaUsuarios" mnemonicParsing="false" onAction="#onMenuItemConsultaUsuariosAction" text="Usuários" />
                         <MenuItem fx:id="menuItemConsultaChamados" mnemonicParsing="false" onAction="#onMenuItemConsultaChamadosAction" text="Chamados" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Relatórios">
-                    <items>
-                      <MenuItem fx:id="menuItemRelatorioUsuarios" mnemonicParsing="false" onAction="#onMenuItemRelatorioUsuariosAction" text="Usuários" />
-                        <MenuItem fx:id="menuItemRelatorioSistemas" mnemonicParsing="false" onAction="#onMenuItemRelatorioSistemasAction" text="Sistemas" />
+                        <MenuItem fx:id="menuItemConsultaSistemas" mnemonicParsing="false" onAction="#onMenuItemConsultaSistemasAction" text="Sistemas" />
+                     </items></Menu>
+                <Menu mnemonicParsing="false" text="Relatórios">
+                     <items>
+                        <MenuItem fx:id="menuItemRelatorioUsuarios" mnemonicParsing="false" onAction="#onMenuItemRelatorioUsuariosAction" text="Usuários" />
                         <MenuItem fx:id="menuItemRelatorioChamados" mnemonicParsing="false" onAction="#onMenuItemRelatorioChamadosAction" text="Chamados" />
-                    </items>
-                  </Menu>
+                        <MenuItem fx:id="menuItemRelatorioSistemas" mnemonicParsing="false" onAction="#onMenuItemRelatorioSistemasAction" text="Sistemas" />
+                     </items></Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="About" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Sair">
-                    <items>
-                      <MenuItem fx:id="menuItemSair" mnemonicParsing="false" onAction="#onMenuItemSairAction" text="Sair" />
-                    </items>
-                  </Menu>
+                <Menu mnemonicParsing="false" text="Sair" />
               </menus>
             </MenuBar>
          </children>
