@@ -3,21 +3,20 @@ package model.entities;
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String name;
-	private String eMail;
+	private String email;
 	private String senha;
 	
 	public Usuario() {
 	}
 
-	public Usuario(Integer id, String name, String eMail, String senha) {
+	public Usuario(Integer id, String name, String email, String senha) {
 		this.id = id;
 		this.name = name;
-		this.eMail = eMail;
+		this.email = email;
 		this.senha = senha;
 	}
 
@@ -37,12 +36,13 @@ public class Usuario implements Serializable {
 		this.name = name;
 	}
 
-	public String geteMail() {
-		return eMail;
+
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
@@ -80,7 +80,7 @@ public class Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", name=" + name + ", eMail=" + eMail + "]";
+		return "Usuario [id=" + id + ", name=" + name + ", eMail=" + email + "]";
 	}
 
 }
