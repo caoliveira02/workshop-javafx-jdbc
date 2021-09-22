@@ -3,6 +3,7 @@ package gui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 import application.Main;
 import gui.util.Alerts;
@@ -36,7 +37,10 @@ public class MainViewController implements Initializable {
 	
 	@FXML
 	public void onMenuItemCadastroUsuariosAction() {
-		loadView2("/gui/UsuariosList.fxml");
+		loadView("/gui/UsuariosList.fxml", (UsuarioListController controller) -> {
+			controller.setUsuarioServices(new UsuarioServices());
+			controller.updateTableView();
+		});
 	}
 	
 	@FXML
@@ -116,7 +120,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemAboutAction() {
-		loadView("/gui/About.fxml");
+		loadView("/gui/About.fxml", x -> {});
 	}
 
 	/******************************************************************/
@@ -135,7 +139,7 @@ public class MainViewController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 	}
 	
-	private synchronized void loadView(String absoluteName) {
+	private synchronized <T> void loadView(String absoluteName, Consumer<T> initializinAction) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
@@ -148,28 +152,9 @@ public class MainViewController implements Initializable {
 			mainVBox.getChildren().add(mainMenu);
 			mainVBox.getChildren().addAll(newVBox.getChildren());
 			
-		}
-		catch (IOException e) {
-			Alerts.showAlert("IO Exception", "Erro loading View", e.getMessage(), AlertType.ERROR);
-		}
-	}
-
-	private synchronized void loadView2(String absoluteName) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
-			VBox newVBox = loader.load();
+			T controller = loader.getController();
+			initializinAction.accept(controller);
 			
-			Scene mainScene = Main.getMainScene();
-			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
-			
-			Node mainMenu = mainVBox.getChildren().get(0);
-			mainVBox.getChildren().clear();
-			mainVBox.getChildren().add(mainMenu);
-			mainVBox.getChildren().addAll(newVBox.getChildren());
-			
-			UsuarioListController controller = loader.getController();
-			controller.setUsuarioServices(new UsuarioServices());
-			controller.updateTableView();			
 		}
 		catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Erro loading View", e.getMessage(), AlertType.ERROR);
